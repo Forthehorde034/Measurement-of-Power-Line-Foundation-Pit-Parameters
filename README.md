@@ -34,10 +34,4 @@ python tools/build.py --deploy
 python tools/build.py --pyinstaller
 
 ## 清理临时文件
-python tools/build.py --clean
-
-
-        1.找到可以设配于公共机上的定位设备：可以定位地理位置，获取当前位置
-        2.解决crop上的当前的bug
-        3.找到赵工目前给的pcd文件中点云的倾斜角度，然后写一个算法来将坐标轴旋转
-        4.最后的需求截图平面
+python tools/build.py --clea
