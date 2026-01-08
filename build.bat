@@ -1,0 +1,1 @@
+>python tools/build.py --pyinstaller > deploy.log 2>&1

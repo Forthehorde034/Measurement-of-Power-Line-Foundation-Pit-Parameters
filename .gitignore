@@ -1,0 +1,9 @@
+nuitka-crash-report.xml
+*.exe
+.vscode
+deployment
+logs
+dist
+build
+dist
+pcdviewer.spec

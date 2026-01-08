@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcdviewer"
+version = "1.0.0"
+description = "pcd 工具"
+authors = [{name = "dqx"}]
+requires-python = ">=3.9"
+
+
+dependencies = [
+    "PySide6>=6.10.0,<7.0.0",      # 自动包含 shiboken6 / addons / essentials
+    "numpy>=2.2.6",
+    "open3d>=0.19.0",
+    "pillow>=12.0.0",
+    "plotly>=6.4.0",
+    "requests>=2.32.5",
+]
+
+
+# 新标准：可选依赖组（PEP 735，替代 requirements-dev.txt）
+[dependency-groups]
+dev = [
+    "ipython>=8.37.0",
+    "ipywidgets>=8.1.8",
+    "pytest>=8.0.0",               # 推荐升级到最新
+    "pytest-qt>=4.2.0",
+]
+build = [
+    "pyinstaller>=6.16.0",
+    "pyinstaller-hooks-contrib>=2025.9",
+    "nuitka>=2.7.11",
+    "pefile>=2023.2.7",            # PyInstaller Windows 必需
+    "pywin32>=311; platform_system == 'Windows'",  # Windows 平台专用
+]
+docs = [
+
+]
+
+# 可选：文档/部署依赖
+optional = [
+
+]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 88
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+select = ["E", "F", "I", "UP", "B", "C4"]
+ignore = ["E501"]  # 交给 black 处理行宽
